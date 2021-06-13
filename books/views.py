@@ -1,14 +1,21 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import *
 
 
-def index(request):
-    return HttpResponse('This is books index')
+class IndexView(generic.ListView):
+    template_name = 'books/index.html'
+    context_object_name = 'books'
+
+    def get_queryset(self):
+        return Book.objects.order_by('-publication_date')
 
 
-def book(request, id):
-    return render(request, 'template', {'context': id})
+class BookView(generic.DetailView):
+    template_name = 'books/book.html'
+    model = Book
 
 
-def author(request, id):
-    return render(request, 'template', {'context': id})
+class AuthorView(generic.DetailView):
+    template_name = 'books/author.html'
+    model = Author
