@@ -1,0 +1,13 @@
+{% extends 'books/base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container">
+    {% for book in books %}
+    <a href="{% url 'books:book' book.pk %}">
+        <h3>{{ book.book_name }}</h3>
+        <p>{{ book.author }}</p>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'books/base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1>{{ book.book_name }}</h1>
+    <p><span>{{ book.author }}</span> - {{ publisher }}</p>
+    <p>{{ book.category }}</p>
+    <h4>{{ book.price }}</h4>
+    <h6>{{ book.page_count }}</h6>
+    <p>{{ book.description }}</p>
+</div>
+{% endblock %}

@@ -12,8 +12,8 @@ class IndexView(generic.ListView):
 
 
 class BookView(generic.DetailView):
-    template_name = 'books/book.html'
     model = Book
+    template_name = 'books/book.html'
 
 
 class AuthorView(generic.DetailView):
