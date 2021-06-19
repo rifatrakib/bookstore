@@ -39,7 +39,7 @@ class Publisher(models.Model):
 
 class Book(models.Model):
     book_name = models.CharField(max_length=200)
-    author = models.ManyToManyField(Author)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.CharField(max_length=50, choices=CATEGORIES)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     price = models.FloatField(default=0)

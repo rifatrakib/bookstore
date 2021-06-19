@@ -1,1 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'books/base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1>{{ author.author_name }}</h1>
+    <p>{{ author.biography }}</p>
+</div>
+{% endblock %}

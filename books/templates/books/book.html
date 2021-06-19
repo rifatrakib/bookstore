@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
     <h1>{{ book.book_name }}</h1>
-    <p><span>{{ book.author }}</span> - {{ publisher }}</p>
+    <p><a href="{% url 'books:author' book.author_id %}">{{ book.author }}</a> - {{ book.publisher.publisher_name }}</p>
     <p>{{ book.category }}</p>
     <h4>{{ book.price }}</h4>
     <h6>{{ book.page_count }}</h6>

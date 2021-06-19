@@ -6,8 +6,11 @@
     {% for book in books %}
     <a href="{% url 'books:book' book.pk %}">
         <h3>{{ book.book_name }}</h3>
-        <p>{{ book.author }}</p>
+        <a href="{% url 'books:author' book.author_id %}">{{ book.author }}</a>
     </a>
+    <br>
+    <hr>
+    <br>
     {% endfor %}
 </div>
 {% endblock %}
